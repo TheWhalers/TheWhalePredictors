@@ -26,7 +26,7 @@ validation_datagen <- image_data_generator(rescale = 1/255)
 train_generator <- flow_images_from_directory(
   dir_train,
   train_datagen,
-  target_size = c(250, 250),
+  target_size = c(150, 150),
   batch_size = 100,
   class_mode = "categorical"
 )
@@ -34,7 +34,7 @@ train_generator <- flow_images_from_directory(
 validation_generator <- flow_images_from_directory(
   dir_validation,
   validation_datagen,
-  target_size = c(250, 250),
+  target_size = c(150, 150),
   batch_size = 100,
   class_mode = "categorical"
 )
@@ -43,7 +43,7 @@ validation_generator <- flow_images_from_directory(
 conv_base <- application_inception_v3(
   weights = "imagenet",
   include_top = FALSE,
-  input_shape = c(250, 250, 3)
+  input_shape = c(150, 150, 3)
 )
 
 # add our custom layers
